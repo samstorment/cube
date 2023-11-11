@@ -101,6 +101,45 @@
             camera.updateProjectionMatrix();
 
             renderer.setSize(width, height);
+        });
+
+        let dragging = false;
+        let startX = 0, startY = 0;
+
+        renderer.domElement.addEventListener('pointerdown', e => {
+            dragging = true;
+            startX = e.x;
+            startY = e.y;
+        })
+
+        renderer.domElement.addEventListener('pointermove', e => {
+
+            if (!dragging) return;
+            if (e.buttons !== 1) return;
+
+            let amount = 25;
+
+            let changeX = e.x - startX;
+            let changeY = e.y - startY;
+            let absX = Math.abs(changeX);
+            let absY = Math.abs(changeY);
+
+
+            if (absX > absY && !active) {
+                if (changeX > amount) queue.push("y'");
+                else if (changeX < -amount) queue.push("y");
+            } else {
+                if (changeY > amount) queue.push("x'");
+                else if (changeY < -amount) queue.push("x");
+            }
+
+            if (absX > amount || absY > amount) {
+                return dragging = false;
+            }
+        })
+
+        renderer.domElement.addEventListener('pointerup', e => {
+            dragging = false;
         })
 
         document.querySelector("#cube-page")?.appendChild(renderer.domElement);
@@ -254,8 +293,6 @@
 
         // rotation speed can be negative to change rotation direction
         function rotate(turn: Turn, rotationSpeed = .2) {
-
-            console.log(turn);
 
             let face = run(() => {
                 if (turn[0] === 'F') return front();  
