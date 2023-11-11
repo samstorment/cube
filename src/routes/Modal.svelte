@@ -88,7 +88,7 @@
 
             <h3>Cubing YouTube Channels</h3>
 
-            <p>These are some channels I would watch when my Rubik's Cube love was at it's peak. Sad to see many of them haven't been active in a while.</p>
+            <p>These are some channels I would watch when my Rubik's Cube love was at its peak. Sad to see many of them haven't been active in a while.</p>
 
             <div class="youtubers">
                 <a href="https://www.youtube.com/@crazybadcuber/videos">CrazyBadCuber</a>
