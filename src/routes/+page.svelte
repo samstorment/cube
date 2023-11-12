@@ -111,6 +111,7 @@
             dragging = true;
             startX = e.x;
             startY = e.y;
+            renderer.domElement.style.touchAction = 'none';
         })
 
         renderer.domElement.addEventListener('pointermove', e => {
@@ -141,6 +142,7 @@
 
         renderer.domElement.addEventListener('pointerup', e => {
             dragging = false;
+            renderer.domElement.style.touchAction = 'none';
         })
 
         renderer.domElement.addEventListener('touchstart', e => e.preventDefault)
