@@ -107,6 +107,7 @@
         let startX = 0, startY = 0;
 
         renderer.domElement.addEventListener('pointerdown', e => {
+            if (e.button !== 0) return;
             dragging = true;
             startX = e.x;
             startY = e.y;
@@ -115,9 +116,9 @@
         renderer.domElement.addEventListener('pointermove', e => {
 
             if (!dragging) return;
-            if (e.buttons !== 1) return;
+            if (queue.length > 2) return;
 
-            let amount = 25;
+            let threshold = 40;
 
             let changeX = e.x - startX;
             let changeY = e.y - startY;
@@ -125,15 +126,15 @@
             let absY = Math.abs(changeY);
 
 
-            if (absX > absY && !active) {
-                if (changeX > amount) queue.push("y'");
-                else if (changeX < -amount) queue.push("y");
+            if (absX > absY) {
+                if (changeX > threshold) queue.push("y'");
+                else if (changeX < -threshold) queue.push("y");
             } else {
-                if (changeY > amount) queue.push("x'");
-                else if (changeY < -amount) queue.push("x");
+                if (changeY > threshold) queue.push("x'");
+                else if (changeY < -threshold) queue.push("x");
             }
 
-            if (absX > amount || absY > amount) {
+            if (absX > threshold || absY > threshold) {
                 return dragging = false;
             }
         })
@@ -141,6 +142,8 @@
         renderer.domElement.addEventListener('pointerup', e => {
             dragging = false;
         })
+
+        renderer.domElement.addEventListener('touchstart', e => e.preventDefault)
 
         document.querySelector("#cube-page")?.appendChild(renderer.domElement);
 
@@ -170,7 +173,7 @@
         const middle  = () => new Set([...cubies.filter(c => c.mesh.position.x === 0)]);
         const equator = () => new Set([...cubies.filter(c => c.mesh.position.y === 0)]);
         const slice   = () => new Set([...cubies.filter(c => c.mesh.position.z === 0)]);
-        const centers = () => new Set([...cubies.filter(c => Math.abs(c.mesh.position.x) + Math.abs(c.mesh.position.y) + Math.abs(c.mesh.position.z) === 10)]);
+        const centers = () => new Set([...cubies.filter(c => Math.abs(c.mesh.position.x) + Math.abs(c.mesh.position.y) + Math.abs(c.mesh.position.z) === maxSize)]);
 
 
         const start = cubies.map(saveState);
@@ -280,7 +283,7 @@
             
             button.addEventListener('click', _ => {
                 // remove this if check and you can enqueue a lot of turns by spamming/holding down enter
-                if (!active) {
+                if (queue.length <= 2) {
                     queue.push(turn);
                 }
             });
