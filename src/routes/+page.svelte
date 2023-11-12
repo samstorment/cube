@@ -111,13 +111,14 @@
             dragging = true;
             startX = e.x;
             startY = e.y;
-            renderer.domElement.style.touchAction = 'none';
         })
 
         renderer.domElement.addEventListener('pointermove', e => {
 
             if (!dragging) return;
             if (queue.length > 2) return;
+            // pressing more than just the primary button
+            if (e.buttons > 1) return;
 
             let threshold = 40;
 
@@ -142,7 +143,6 @@
 
         renderer.domElement.addEventListener('pointerup', e => {
             dragging = false;
-            renderer.domElement.style.touchAction = 'none';
         })
 
         renderer.domElement.addEventListener('touchstart', e => e.preventDefault)
