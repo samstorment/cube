@@ -500,25 +500,25 @@
 
         <div class="wide">
             <button data-turn="f" title="Front Wide Clockwise">Fw</button>
-            <button data-turn="r" title="Front Wide Clockwise">Rw</button>
-            <button data-turn="u" title="Front Wide Clockwise">Uw</button>
-            <button data-turn="d" title="Front Wide Clockwise">Dw</button>
-            <button data-turn="l" title="Front Wide Clockwise">Lw</button>
-            <button data-turn="b" title="Front Wide Clockwise">Bw</button>
+            <button data-turn="r" title="Right Wide Clockwise">Rw</button>
+            <button data-turn="u" title="Up Wide Clockwise">Uw</button>
+            <button data-turn="d" title="Down Wide Clockwise">Dw</button>
+            <button data-turn="l" title="Left Wide Clockwise">Lw</button>
+            <button data-turn="b" title="Back Wide Clockwise">Bw</button>
 
             <button data-turn="f'" data-prime title="Front Wide Counterclockwise">Fw'</button>
-            <button data-turn="r'" data-prime title="Front Wide Counterclockwise">Rw'</button>
-            <button data-turn="u'" data-prime title="Front Wide Counterclockwise">Uw'</button>
-            <button data-turn="d'" data-prime title="Front Wide Counterclockwise">Dw'</button>
-            <button data-turn="l'" data-prime title="Front Wide Counterclockwise">Lw'</button>
-            <button data-turn="b'" data-prime title="Front Wide Counterclockwise">Bw'</button>
+            <button data-turn="r'" data-prime title="Right Wide Counterclockwise">Rw'</button>
+            <button data-turn="u'" data-prime title="Up Wide Counterclockwise">Uw'</button>
+            <button data-turn="d'" data-prime title="Down Wide Counterclockwise">Dw'</button>
+            <button data-turn="l'" data-prime title="Left Wide Counterclockwise">Lw'</button>
+            <button data-turn="b'" data-prime title="Back Wide Counterclockwise">Bw'</button>
 
             <button data-turn="f2" data-double title="Front Wide Twice">Fw2</button>
-            <button data-turn="r2" data-double title="Front Wide Twice">Rw2</button>
-            <button data-turn="u2" data-double title="Front Wide Twice">Uw2</button>
-            <button data-turn="d2" data-double title="Front Wide Twice">Dw2</button>
-            <button data-turn="l2" data-double title="Front Wide Twice">Lw2</button>
-            <button data-turn="b2" data-double title="Front Wide Twice">Bw2</button>
+            <button data-turn="r2" data-double title="Right Wide Twice">Rw2</button>
+            <button data-turn="u2" data-double title="Up Wide Twice">Uw2</button>
+            <button data-turn="d2" data-double title="Down Wide Twice">Dw2</button>
+            <button data-turn="l2" data-double title="Left Wide Twice">Lw2</button>
+            <button data-turn="b2" data-double title="Back Wide Twice">Bw2</button>
         </div>
 
         <button id="scramble">Scramble</button>

@@ -76,7 +76,7 @@
             
             <h3>How it was made</h3>
 
-            <p>Interactive Rubik's Cube made with <a href="https://threejs.org/">Three.js</a>.</p>
+            <p>Interactive Rubik's Cube made with <a href="https://threejs.org/">Three.js</a> and <a href="https://kit.svelte.dev/">SvelteKit</a>. Here is the <a href="https://github.com/samstorment/cube">GitHub Repo</a>.</p>
 
 
             <h3>Cube Resources</h3>
